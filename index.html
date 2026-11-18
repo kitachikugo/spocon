@@ -106,6 +106,10 @@
             </div>
             
             <div class="flex items-center gap-2">
+                <button onclick="clearLogsConfirm()" class="flex items-center gap-1 bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 px-2.5 py-1 rounded-full text-[10px] font-bold transition-colors shadow-sm">
+                    <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                    <span>データ初期化</span>
+                </button>
                 <button onclick="openSyncModal()" class="flex items-center gap-1 bg-slate-800 hover:bg-slate-700 text-white px-2.5 py-1 rounded-full text-[10px] font-bold transition-colors shadow-sm">
                     <i data-lucide="cloud" class="w-3 h-3"></i>
                     <span>クラウド同期設定</span>
@@ -395,13 +399,21 @@
         </div>
     </div>
 
-    <!-- リセット確認用モーダル -->
+    <!-- リセット確認用モーダル（パスワードロック付き） -->
     <div id="reset-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm hidden">
         <div class="bg-white border border-slate-200 rounded-xl max-w-md w-full p-5 relative shadow-lg">
-            <h3 class="text-sm font-bold text-rose-600 mb-1.5 tracking-tight">初期化の確認</h3>
-            <p class="text-slate-600 text-xs mb-5 leading-relaxed">
-                これまでのスコア報告履歴がすべて消去され、初期状態のチームに戻ります。元に戻せませんがよろしいですか？
+            <h3 class="text-sm font-bold text-rose-600 mb-1.5 tracking-tight flex items-center gap-1.5">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                <span>初期化の確認（管理者ロック）</span>
+            </h3>
+            <p class="text-slate-600 text-xs mb-3 leading-relaxed">
+                これまでのスコア報告履歴がすべて消去され、初期状態に戻ります。誤操作防止のため、パスワードを入力してください。
             </p>
+            <div class="mb-4">
+                <label for="reset-password-input" class="block text-[10px] font-bold text-slate-500 mb-1">管理者パスワード</label>
+                <input type="password" id="reset-password-input" inputmode="numeric" placeholder="パスワードを入力..." onkeydown="if(event.key==='Enter'){event.preventDefault();executeReset();}" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm font-mono text-slate-800 focus:outline-none focus:border-rose-500">
+                <p id="reset-password-error" class="text-[11px] text-rose-600 font-bold mt-1 hidden">パスワードが違います。</p>
+            </div>
             <div class="flex gap-2 justify-end text-xs">
                 <button onclick="closeResetModal()" class="px-3 py-1.5 rounded bg-slate-100 text-slate-600 font-bold hover:bg-slate-200 transition-colors">
                     キャンセル
@@ -1673,17 +1685,38 @@
             document.getElementById('confetti-container').innerHTML = '';
         };
 
-        // 全データ一括リセット確認
+        // 全データ一括リセット確認（パスワード初期化）
         window.clearLogsConfirm = function() {
+            const pwInput = document.getElementById('reset-password-input');
+            const pwError = document.getElementById('reset-password-error');
+            if (pwInput) pwInput.value = '';
+            if (pwError) pwError.classList.add('hidden');
             resetModal.classList.remove('hidden');
+            setTimeout(() => {
+                if (pwInput) pwInput.focus();
+            }, 50);
         };
 
         window.closeResetModal = function() {
             resetModal.classList.add('hidden');
         };
 
-        // リセット実行
+        // リセット実行（パスワード「12345」照合）
         window.executeReset = async function() {
+            const pwInput = document.getElementById('reset-password-input');
+            const pwError = document.getElementById('reset-password-error');
+            // 全角数字を半角に変換して比較
+            const rawVal = (pwInput ? pwInput.value : '').trim().replace(/[０-９]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0));
+
+            if (rawVal !== '12345') {
+                if (pwError) pwError.classList.remove('hidden');
+                if (pwInput) {
+                    pwInput.focus();
+                    pwInput.select();
+                }
+                return;
+            }
+
             closeResetModal();
             
             if (db && currentUser) {
