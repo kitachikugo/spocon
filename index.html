@@ -210,16 +210,16 @@
                             報告回
                         </label>
                         <div class="grid grid-cols-2 gap-2 font-bold">
-                            <label class="relative flex items-center justify-center py-1.5 rounded-lg border border-slate-200 bg-[#f8fafc] cursor-pointer transition-all hover:bg-slate-100">
+                            <label class="relative flex items-center justify-center py-2 rounded-lg border border-slate-200 bg-[#f8fafc] cursor-pointer transition-all hover:bg-slate-100">
                                 <input type="radio" name="report-round" value="1" checked class="sr-only peer">
-                                <div class="peer-checked:border-slate-500 peer-checked:bg-slate-200 absolute inset-0 rounded-lg border border-transparent pointer-events-none transition-all"></div>
-                                <span class="relative z-10 text-[10px] font-bold text-slate-400 peer-checked:text-slate-900 transition-colors">1回目</span>
+                                <div class="peer-checked:border-amber-500 peer-checked:bg-amber-400 peer-checked:shadow-sm absolute inset-0 rounded-lg border-2 border-transparent pointer-events-none transition-all"></div>
+                                <span class="relative z-10 text-xs font-black text-slate-400 peer-checked:text-slate-950 transition-colors">1回目</span>
                             </label>
                             
-                            <label class="relative flex items-center justify-center py-1.5 rounded-lg border border-slate-200 bg-[#f8fafc] cursor-pointer transition-all hover:bg-slate-100">
+                            <label class="relative flex items-center justify-center py-2 rounded-lg border border-slate-200 bg-[#f8fafc] cursor-pointer transition-all hover:bg-slate-100">
                                 <input type="radio" name="report-round" value="2" class="sr-only peer">
-                                <div class="peer-checked:border-slate-500 peer-checked:bg-slate-200 absolute inset-0 rounded-lg border border-transparent pointer-events-none transition-all"></div>
-                                <span class="relative z-10 text-[10px] font-bold text-slate-400 peer-checked:text-slate-900 transition-colors">2回目</span>
+                                <div class="peer-checked:border-sky-500 peer-checked:bg-sky-400 peer-checked:shadow-sm absolute inset-0 rounded-lg border-2 border-transparent pointer-events-none transition-all"></div>
+                                <span class="relative z-10 text-xs font-black text-slate-400 peer-checked:text-slate-950 transition-colors">2回目</span>
                             </label>
                         </div>
                     </div>
@@ -339,11 +339,11 @@
                 <!-- 2位発表ボード (左) -->
                 <div id="podium-card-2" class="flex flex-col items-center transition-all duration-500">
                     <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-2">2nd Place</span>
-                    <div class="w-full relative h-[140px] rounded-lg border border-slate-700 bg-slate-900/50 flex flex-col items-center justify-between p-3 overflow-hidden">
-                        <div id="m1-content-2" class="hidden flex flex-col items-center justify-center h-full w-full text-center">
-                            <p class="text-xs font-black text-slate-100 line-clamp-2" id="podium-name-2">第2位のチーム</p>
-                            <p class="text-lg font-m1-digital font-bold text-slate-300 mt-2" id="podium-score-2">0回</p>
-                            <span class="text-[8px] font-bold text-slate-400 mt-1 px-1.5 py-0.5 rounded bg-slate-800">SILVER</span>
+                    <div class="w-full relative h-[140px] rounded-lg border border-slate-700 bg-slate-900/50 flex flex-col items-center justify-between p-2.5 overflow-hidden">
+                        <div id="m1-content-2" class="hidden flex flex-col items-center justify-center h-full w-full text-center overflow-y-auto">
+                            <div class="text-xs font-black text-slate-100 leading-snug space-y-0.5 w-full" id="podium-name-2">第2位のチーム</div>
+                            <p class="text-lg font-m1-digital font-bold text-slate-300 mt-1.5 flex-shrink-0" id="podium-score-2">0回</p>
+                            <span class="text-[8px] font-bold text-slate-400 mt-1 px-1.5 py-0.5 rounded bg-slate-800 flex-shrink-0">SILVER</span>
                         </div>
                         <div id="m1-shutter-2" class="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-950 flex flex-col items-center justify-center border border-slate-700 z-10">
                             <span class="text-2xl font-black font-m1-digital text-slate-600">??</span>
@@ -357,11 +357,11 @@
                     <div class="flex justify-center mb-1 text-amber-500">
                         <i data-lucide="crown" class="w-5 h-5 animate-bounce"></i>
                     </div>
-                    <div class="w-full relative h-[180px] rounded-lg border-2 border-yellow-500 bg-gradient-to-b from-amber-950/20 to-transparent flex flex-col items-center justify-between p-3 overflow-hidden shadow-lg shadow-yellow-950/20">
-                        <div id="m1-content-1" class="hidden flex flex-col items-center justify-center h-full w-full text-center">
-                            <span class="text-[9px] font-bold tracking-widest text-yellow-500 animate-pulse">CHAMPION</span>
-                            <p class="text-sm font-black text-yellow-100 line-clamp-2 mt-1" id="podium-name-1">第1位のチーム</p>
-                            <p class="text-2xl font-m1-digital font-extrabold text-yellow-400 mt-3" id="podium-score-1">0回</p>
+                    <div class="w-full relative h-[180px] rounded-lg border-2 border-yellow-500 bg-gradient-to-b from-amber-950/20 to-transparent flex flex-col items-center justify-between p-2.5 overflow-hidden shadow-lg shadow-yellow-950/20">
+                        <div id="m1-content-1" class="hidden flex flex-col items-center justify-center h-full w-full text-center overflow-y-auto">
+                            <span class="text-[9px] font-bold tracking-widest text-yellow-500 animate-pulse flex-shrink-0">CHAMPION</span>
+                            <div class="text-sm font-black text-yellow-100 leading-snug space-y-0.5 mt-1 w-full" id="podium-name-1">第1位のチーム</div>
+                            <p class="text-2xl font-m1-digital font-extrabold text-yellow-400 mt-2 flex-shrink-0" id="podium-score-1">0回</p>
                         </div>
                         <div id="m1-shutter-1" class="absolute inset-0 bg-gradient-to-b from-yellow-950/80 to-black flex flex-col items-center justify-center border border-yellow-700 z-10">
                             <span class="text-3xl font-black font-m1-digital text-yellow-700">???</span>
@@ -373,11 +373,11 @@
                 <!-- 3位発表ボード (右) -->
                 <div id="podium-card-3" class="flex flex-col items-center transition-all duration-500">
                     <span class="text-[10px] font-bold tracking-widest text-amber-700 uppercase mb-2">3rd Place</span>
-                    <div class="w-full relative h-[120px] rounded-lg border border-slate-700 bg-[#15110d] flex flex-col items-center justify-between p-3 overflow-hidden">
-                        <div id="m1-content-3" class="hidden flex flex-col items-center justify-center h-full w-full text-center">
-                            <p class="text-xs font-black text-amber-200 line-clamp-2" id="podium-name-3">第3位のチーム</p>
-                            <p class="text-base font-m1-digital font-bold text-amber-400 mt-2" id="podium-score-3">0回</p>
-                            <span class="text-[8px] font-bold text-amber-500 mt-1 px-1.5 py-0.5 rounded bg-amber-950">BRONZE</span>
+                    <div class="w-full relative h-[120px] rounded-lg border border-slate-700 bg-[#15110d] flex flex-col items-center justify-between p-2.5 overflow-hidden">
+                        <div id="m1-content-3" class="hidden flex flex-col items-center justify-center h-full w-full text-center overflow-y-auto">
+                            <div class="text-xs font-black text-amber-200 leading-snug space-y-0.5 w-full" id="podium-name-3">第3位のチーム</div>
+                            <p class="text-base font-m1-digital font-bold text-amber-400 mt-1.5 flex-shrink-0" id="podium-score-3">0回</p>
+                            <span class="text-[8px] font-bold text-amber-500 mt-1 px-1.5 py-0.5 rounded bg-amber-950 flex-shrink-0">BRONZE</span>
                         </div>
                         <div id="m1-shutter-3" class="absolute inset-0 bg-gradient-to-b from-amber-950 to-black flex flex-col items-center justify-center border border-amber-900 z-10">
                             <span class="text-2xl font-black font-m1-digital text-amber-800">??</span>
@@ -1226,13 +1226,21 @@
             closeConfirmModal();
             submitBtn.disabled = true;
 
+            const advanceToNextRound = () => {
+                scoreInput.value = "";
+                // 学校の番号はそのまま保持し、1回目送信後は自動で「2回目」へ切り替える
+                if (logData.round === 1) {
+                    const round2Radio = document.querySelector('input[name="report-round"][value="2"]');
+                    if (round2Radio) round2Radio.checked = true;
+                }
+                updateAutoTeamName();
+            };
+
             if (db && currentUser) {
                 try {
                     await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'score_logs', logData.id), logData);
                     showToast("送信が成功しました！");
-                    scoreInput.value = "";
-                    teamSelect.value = "";
-                    updateAutoTeamName();
+                    advanceToNextRound();
                 } catch (err) {
                     console.error("スコア送信失敗:", err);
                     showToast("送信に失敗しました", "error");
@@ -1244,9 +1252,7 @@
                 saveLocalLogs(scoreLogs);
                 updateUI();
                 showToast("スコアを記録しました");
-                scoreInput.value = "";
-                teamSelect.value = "";
-                updateAutoTeamName();
+                advanceToNextRound();
                 submitBtn.disabled = false;
             }
 
@@ -1499,7 +1505,7 @@
             });
         }
 
-        // M-1グランプリ風 審査結果発表モーダルの起動
+        // M-1グランプリ風 審査結果発表モーダルの起動（同点＝同率順位対応）
         window.presentPodium = function(eventKey) {
             const cfg = EVENT_CONFIG[eventKey];
             const teams = eventTeams[eventKey] || [];
@@ -1509,42 +1515,74 @@
                 return;
             }
 
-            const rankData = teams
-                .map(name => {
-                    const score = (teamSummary[eventKey] && teamSummary[eventKey][name]) ? teamSummary[eventKey][name].best : 0;
-                    return { name, score };
+            // 記録があるチーム（best > 0）をハイスコア順にソート（同点はエントリー番号順）
+            const scoredTeams = teams
+                .map((name, idx) => {
+                    const summary = (teamSummary[eventKey] && teamSummary[eventKey][name]) || { best: 0 };
+                    return { name, score: summary.best || 0, idx };
                 })
-                .sort((a, b) => b.score - a.score);
+                .filter(item => item.score > 0)
+                .sort((a, b) => {
+                    if (b.score !== a.score) return b.score - a.score;
+                    return a.idx - b.idx;
+                });
+
+            // 同じベスト回数のチームを同率順位グループにまとめる
+            // 例: 100回(2チーム), 95回(1チーム), 90回(3チーム) -> グループ0(1位), グループ1(2位), グループ2(3位)
+            const rankGroups = [];
+            scoredTeams.forEach(item => {
+                const lastGroup = rankGroups[rankGroups.length - 1];
+                if (lastGroup && lastGroup.score === item.score) {
+                    lastGroup.teams.push(item.name);
+                } else {
+                    rankGroups.push({ score: item.score, teams: [item.name] });
+                }
+            });
 
             m1State.step = 0;
             m1State.isRevealing = false;
             m1State.currentEvent = eventKey;
 
-            m1State.goldData = rankData[0] || { name: "該当なし", score: 0 };
-            m1State.silverData = rankData[1] || { name: "該当なし", score: 0 };
-            m1State.bronzeData = rankData[2] || { name: "該当なし", score: 0 };
+            m1State.goldData = rankGroups[0] || { teams: ["該当なし"], score: 0 };
+            m1State.silverData = rankGroups[1] || { teams: ["該当なし"], score: 0 };
+            m1State.bronzeData = rankGroups[2] || { teams: ["該当なし"], score: 0 };
 
             podiumEventBadge.className = `px-4 py-1 text-xs font-bold rounded-full font-mono tracking-widest uppercase m1-gold-border ${cfg.podiumBadge}`;
             podiumEventBadge.innerText = `${cfg.fullLabel} (ハイスコア)`;
 
-            const getFormattedNameWithNum = (name) => {
-                const idx = teams.indexOf(name);
-                return idx !== -1 ? `${(idx + 1).toString().padStart(2, '0')}. ${name}` : name;
+            const formatTeamListHTML = (group) => {
+                if (!group || !group.teams || group.teams[0] === "該当なし") {
+                    return `<p class="truncate">該当なし</p>`;
+                }
+                const isTie = group.teams.length > 1;
+                const badge = isTie ? `<span class="inline-block text-[9px] px-1.5 py-0.2 rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/40 mb-0.5">同率（${group.teams.length}チーム）</span>` : '';
+                const lines = group.teams.map(name => {
+                    const idx = teams.indexOf(name);
+                    const label = idx !== -1 ? `${(idx + 1).toString().padStart(2, '0')}. ${name}` : name;
+                    return `<p class="${isTie ? 'text-[11px]' : ''} line-clamp-2">${label}</p>`;
+                }).join('');
+                return badge + lines;
             };
 
-            podiumName2.innerText = getFormattedNameWithNum(m1State.silverData.name);
-            podiumScore2.innerText = `${m1State.silverData.score.toLocaleString()}回`;
-            podiumName1.innerText = getFormattedNameWithNum(m1State.goldData.name);
-            podiumScore1.innerText = `${m1State.goldData.score.toLocaleString()}回`;
-            podiumName3.innerText = getFormattedNameWithNum(m1State.bronzeData.name);
-            podiumScore3.innerText = `${m1State.bronzeData.score.toLocaleString()}回`;
+            podiumName2.innerHTML = formatTeamListHTML(m1State.silverData);
+            podiumScore2.innerText = m1State.silverData.teams[0] === "該当なし" ? "-" : `${m1State.silverData.score.toLocaleString()}回`;
+            podiumName1.innerHTML = formatTeamListHTML(m1State.goldData);
+            podiumScore1.innerText = m1State.goldData.teams[0] === "該当なし" ? "-" : `${m1State.goldData.score.toLocaleString()}回`;
+            podiumName3.innerHTML = formatTeamListHTML(m1State.bronzeData);
+            podiumScore3.innerText = m1State.bronzeData.teams[0] === "該当なし" ? "-" : `${m1State.bronzeData.score.toLocaleString()}回`;
 
             for (let i = 1; i <= 3; i++) {
-                document.getElementById(`m1-shutter-${i}`).classList.remove('hidden', 'animate-shiver');
-                document.getElementById(`m1-content-${i}`).classList.add('hidden');
+                const shutterEl = document.getElementById(`m1-shutter-${i}`);
+                const contentEl = document.getElementById(`m1-content-${i}`);
+                if (shutterEl) shutterEl.classList.remove('hidden', 'animate-shiver');
+                if (contentEl) contentEl.classList.add('hidden');
             }
 
-            document.getElementById('m1-trigger-btn').classList.remove('hidden');
+            const triggerBtn = document.getElementById('m1-trigger-btn');
+            if (triggerBtn) {
+                triggerBtn.disabled = false;
+                triggerBtn.classList.remove('hidden');
+            }
             document.getElementById('m1-trigger-text').innerText = "発表を開始する";
             document.getElementById('m1-narrator-text').innerText = "ボタンを押して、緊張の審査結果開示をスタートします。";
             document.getElementById('confetti-container').innerHTML = '';
@@ -1552,7 +1590,7 @@
             podiumModal.classList.remove('hidden');
         };
 
-        // M-1風 ドラマチック開示進行
+        // M-1風 ドラマチック開示進行（同率順位ナレーション対応）
         window.advanceM1Reveal = function() {
             if (m1State.isRevealing) return;
 
@@ -1561,9 +1599,13 @@
             const narratorText = document.getElementById('m1-narrator-text');
 
             const teams = eventTeams[m1State.currentEvent] || [];
-            const getFormattedNameWithNum = (name) => {
-                const idx = teams.indexOf(name);
-                return idx !== -1 ? `${(idx + 1).toString().padStart(2, '0')}. ${name}` : name;
+            const formatGroupNarrator = (group) => {
+                if (!group || !group.teams || group.teams[0] === "該当なし") return "該当なし";
+                return group.teams.map(name => {
+                    const idx = teams.indexOf(name);
+                    const label = idx !== -1 ? `${(idx + 1).toString().padStart(2, '0')}. ${name}` : name;
+                    return `「${label}」`;
+                }).join('・');
             };
 
             if (m1State.step === 0) {
@@ -1572,18 +1614,28 @@
                 narratorText.innerText = "まずは第3位の発表です… ドラムロールスタート！";
                 
                 const shutter = document.getElementById('m1-shutter-3');
-                shutter.classList.add('animate-shiver');
+                if (shutter) shutter.classList.add('animate-shiver');
 
                 setTimeout(() => {
-                    shutter.classList.add('hidden');
-                    shutter.classList.remove('animate-shiver');
-                    document.getElementById('m1-content-3').classList.remove('hidden');
-                    
-                    narratorText.innerText = `第3位は「${getFormattedNameWithNum(m1State.bronzeData.name)}」！ おめでとうございます！`;
-                    triggerText.innerText = "続いて第2位を発表";
-                    triggerBtn.disabled = false;
-                    m1State.isRevealing = false;
-                    m1State.step = 1;
+                    try {
+                        if (shutter) {
+                            shutter.classList.add('hidden');
+                            shutter.classList.remove('animate-shiver');
+                        }
+                        const content = document.getElementById('m1-content-3');
+                        if (content) content.classList.remove('hidden');
+                        
+                        const names3 = formatGroupNarrator(m1State.bronzeData);
+                        const tiePrefix3 = m1State.bronzeData.teams.length > 1 ? '同率' : '';
+                        narratorText.innerText = names3 === "該当なし"
+                            ? "第3位は該当なし！続いて第2位の発表へ進みます！"
+                            : `${tiePrefix3}第3位は${names3}（${m1State.bronzeData.score}回）！ おめでとうございます！`;
+                        triggerText.innerText = "続いて第2位を発表";
+                    } finally {
+                        triggerBtn.disabled = false;
+                        m1State.isRevealing = false;
+                        m1State.step = 1;
+                    }
                 }, 2200);
 
             } else if (m1State.step === 1) {
@@ -1592,18 +1644,28 @@
                 narratorText.innerText = "続いて栄光の第2位… 運命のドラムロール！";
                 
                 const shutter = document.getElementById('m1-shutter-2');
-                shutter.classList.add('animate-shiver');
+                if (shutter) shutter.classList.add('animate-shiver');
 
                 setTimeout(() => {
-                    shutter.classList.add('hidden');
-                    shutter.classList.remove('animate-shiver');
-                    document.getElementById('m1-content-2').classList.remove('hidden');
-                    
-                    narratorText.innerText = `第2位は「${getFormattedNameWithNum(m1State.silverData.name)}」！ 素晴らしい記録です！`;
-                    triggerText.innerText = "いよいよ勝者の発表へ...";
-                    triggerBtn.disabled = false;
-                    m1State.isRevealing = false;
-                    m1State.step = 2;
+                    try {
+                        if (shutter) {
+                            shutter.classList.add('hidden');
+                            shutter.classList.remove('animate-shiver');
+                        }
+                        const content = document.getElementById('m1-content-2');
+                        if (content) content.classList.remove('hidden');
+                        
+                        const names2 = formatGroupNarrator(m1State.silverData);
+                        const tiePrefix2 = m1State.silverData.teams.length > 1 ? '同率' : '';
+                        narratorText.innerText = names2 === "該当なし"
+                            ? "第2位は該当なし！いよいよ勝者の発表へ進みます！"
+                            : `${tiePrefix2}第2位は${names2}（${m1State.silverData.score}回）！ 素晴らしい記録です！`;
+                        triggerText.innerText = "いよいよ勝者の発表へ...";
+                    } finally {
+                        triggerBtn.disabled = false;
+                        m1State.isRevealing = false;
+                        m1State.step = 2;
+                    }
                 }, 2200);
 
             } else if (m1State.step === 2) {
@@ -1612,20 +1674,30 @@
                 narratorText.innerText = "運命の瞬間… 今回の王者が決定します。ドラムロール…！！";
                 
                 const shutter = document.getElementById('m1-shutter-1');
-                shutter.classList.add('animate-shiver');
+                if (shutter) shutter.classList.add('animate-shiver');
 
                 setTimeout(() => {
-                    shutter.classList.add('hidden');
-                    shutter.classList.remove('animate-shiver');
-                    document.getElementById('m1-content-1').classList.remove('hidden');
-                    
-                    narratorText.innerHTML = `🎉 栄光の勝者は <span class="text-yellow-400 font-extrabold text-sm">「${getFormattedNameWithNum(m1State.goldData.name)}」</span>に決定！！ おめでとうございます！！`;
-                    triggerBtn.classList.add('hidden');
-                    
-                    triggerM1Confetti();
-                    
-                    m1State.isRevealing = false;
-                    m1State.step = 3;
+                    try {
+                        if (shutter) {
+                            shutter.classList.add('hidden');
+                            shutter.classList.remove('animate-shiver');
+                        }
+                        const content = document.getElementById('m1-content-1');
+                        if (content) content.classList.remove('hidden');
+                        
+                        const names1 = formatGroupNarrator(m1State.goldData);
+                        const tiePrefix1 = m1State.goldData.teams.length > 1 ? '同率' : '';
+                        narratorText.innerHTML = names1 === "該当なし"
+                            ? "記録がまだ登録されていません。"
+                            : `🎉 栄光の${tiePrefix1}勝者は <span class="text-yellow-400 font-extrabold text-sm">${names1}</span>（${m1State.goldData.score}回）に決定！！ おめでとうございます！！`;
+                        triggerBtn.classList.add('hidden');
+                        
+                        triggerM1Confetti();
+                    } finally {
+                        triggerBtn.disabled = false;
+                        m1State.isRevealing = false;
+                        m1State.step = 3;
+                    }
                 }, 3500);
             }
         };
